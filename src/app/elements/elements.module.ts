@@ -5,6 +5,7 @@ import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [TableComponent],
-  imports: [CommonModule]
+  imports: [CommonModule],
+  exports: [TableComponent]
 })
 export class ElementsModule {}

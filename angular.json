@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "ng-server-pagination"
+  "defaultProject": "ng-server-pagination",
+  "cli": {
+    "analytics": "c321a4a1-d26d-4692-8cda-f9c38eee108f"
+  }
 }
