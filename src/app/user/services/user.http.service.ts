@@ -10,11 +10,11 @@ import { User } from '../models';
 export class UserHttpService {
   constructor(private http: HttpClient) {}
 
-  loadUsers(pageNumber = 0, pageSize = 3): Observable<User[]> {
+  loadUsers(index: number, size: number): Observable<User[]> {
     return this.http.get<User[]>('/api/users', {
       params: new HttpParams()
-        .set('_page', pageNumber.toString())
-        .set('_limit', pageSize.toString())
+        .set('_page', index.toString())
+        .set('_limit', size.toString())
     });
   }
 }
