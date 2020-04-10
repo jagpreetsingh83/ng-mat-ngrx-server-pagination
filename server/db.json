@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Osborn",
+      "lastName": "Estrada"
+    },
+    {
+      "id": 2,
+      "firstName": "Lorna",
+      "lastName": "Mcleod"
+    },
+    {
+      "id": 3,
+      "firstName": "Rhea",
+      "lastName": "Ayala"
+    },
+    {
+      "id": 4,
+      "firstName": "Parsons",
+      "lastName": "Tyler"
+    },
+    {
+      "id": 5,
+      "firstName": "Vilma",
+      "lastName": "Mcgowan"
+    },
+    {
+      "id": 6,
+      "firstName": "Keller",
+      "lastName": "Walter"
+    },
+    {
+      "id": 7,
+      "firstName": "Douglas",
+      "lastName": "Vang"
+    },
+    {
+      "id": 8,
+      "firstName": "Diana",
+      "lastName": "Snow"
+    },
+    {
+      "id": 9,
+      "firstName": "Andrews",
+      "lastName": "Moreno"
+    },
+    {
+      "id": 10,
+      "firstName": "Lilia",
+      "lastName": "Reed"
+    }
+  ]
+}

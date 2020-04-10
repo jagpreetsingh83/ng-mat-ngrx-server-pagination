@@ -1,0 +1,12 @@
+{
+  "/api": {
+    "target": "/",
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "router": {
+      "localhost:4200": "http://localhost:3000"
+    }
+  }
+}
