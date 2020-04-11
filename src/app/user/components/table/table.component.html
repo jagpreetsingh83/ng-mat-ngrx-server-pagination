@@ -1,8 +1,10 @@
-<section>
-  <div *ngIf="isLoading$ | async" class="spinner-container" role="group">
+<section class="table-container">
+  <!-- SPINNER -->
+  <div *ngIf="isLoading$ | async" class="spinner" role="group">
     <mat-spinner></mat-spinner>
   </div>
 
+  <!-- TABLE -->
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Id -->
     <ng-container matColumnDef="id">
@@ -26,6 +28,7 @@
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
 
+  <!-- PAGINATOR -->
   <mat-paginator
     [pageSizeOptions]="[3, 5]"
     [length]="10"

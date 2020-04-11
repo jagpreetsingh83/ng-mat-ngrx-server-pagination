@@ -14,13 +14,18 @@ export class UserDataSource implements DataSource<User> {
 
   loadUsers(page: PageQuery) {
     this.subs.add(
-      this.store.pipe(select(selectUsersPage(page))).subscribe(users => {
-        if (users.length > 0) {
-          this.userDataSubject.next(users);
-        } else {
-          this.store.dispatch(load({ payload: { page } }));
-        }
-      })
+      this.store
+        .pipe(
+          // tap(() => this.userDataSubject.next([])),
+          select(selectUsersPage(page))
+        )
+        .subscribe(users => {
+          if (users.length > 0) {
+            this.userDataSubject.next(users);
+          } else {
+            this.store.dispatch(load({ payload: { page } }));
+          }
+        })
     );
   }
 
