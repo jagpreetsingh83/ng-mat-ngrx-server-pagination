@@ -13,7 +13,7 @@ export class UserHttpService {
   loadUsers(index: number, size: number): Observable<User[]> {
     return this.http.get<User[]>('/api/users', {
       params: new HttpParams()
-        .set('_page', index.toString())
+        .set('_page', (index + 1).toString())
         .set('_limit', size.toString())
     });
   }
