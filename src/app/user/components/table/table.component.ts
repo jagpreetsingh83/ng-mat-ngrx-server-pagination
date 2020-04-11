@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { Store } from '@ngrx/store';
 
-import { UserHttpService } from '../../services/user.http.service';
+import { UserState } from '../../store';
 import { UserDataSource } from './table.datasource';
 
 @Component({
@@ -16,10 +17,10 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private userHttp: UserHttpService) {}
+  constructor(private store: Store<UserState>) {}
 
   ngOnInit() {
-    this.dataSource = new UserDataSource(this.userHttp);
+    this.dataSource = new UserDataSource(this.store);
     this.dataSource.loadUsers({ index: 0, size: 3 });
   }
 
