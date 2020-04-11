@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
-import { UserState } from '../../store';
+import { selectLoading, UserState } from '../../store';
 import { UserDataSource } from './table.datasource';
 
 @Component({
@@ -16,6 +17,8 @@ export class TableComponent implements OnInit, AfterViewInit {
   dataSource: UserDataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  isLoading$: Observable<boolean> = this.store.pipe(select(selectLoading));
 
   constructor(private store: Store<UserState>) {}
 

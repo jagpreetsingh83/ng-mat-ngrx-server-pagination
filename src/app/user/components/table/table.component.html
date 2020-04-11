@@ -1,4 +1,8 @@
 <section>
+  <div *ngIf="isLoading$ | async" class="spinner-container" role="group">
+    <mat-spinner></mat-spinner>
+  </div>
+
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Id -->
     <ng-container matColumnDef="id">

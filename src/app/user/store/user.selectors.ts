@@ -17,3 +17,8 @@ export const selectUsersPage = (page: PageQuery) =>
     const end = start + page.size;
     return allUsers.slice(start, end);
   });
+
+export const selectLoading = createSelector(
+  selectUserState,
+  state => state.loading
+);
