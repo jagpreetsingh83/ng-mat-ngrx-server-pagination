@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Screenshot
 
-![Store Based Remote Pagination](Screenshot.png 'Store Based Remote Pagination')
+![Store Based Remote Pagination](screenshot.png 'Store Based Remote Pagination')
