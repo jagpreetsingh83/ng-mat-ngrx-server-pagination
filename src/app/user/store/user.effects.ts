@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 
 import { User } from '../models';
 import { UserHttpService } from '../services/user.http.service';
@@ -12,7 +12,7 @@ export class UserEffects {
   load$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(UserActions.load),
-      switchMap(({ payload: { page } }) =>
+      mergeMap(({ payload: { page } }) =>
         this.userHttp.loadUsers(page.index, page.size).pipe(
           tap(users => console.log('Received', users)),
           catchError(error => {
